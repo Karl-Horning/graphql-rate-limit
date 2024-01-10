@@ -37,6 +37,8 @@
     "@graphql-tools/schema": "^10.0.2",
     "@graphql-tools/utils": "^10.0.12",
     "apollo-server": "^3.13.0",
+    "chalk": "^2.4.2",
+    "dotenv": "^16.3.1",
     "graphql": "^16.8.1",
     "graphql-rate-limit-directive": "^2.0.5",
     "rate-limiter-flexible": "^4.0.0"

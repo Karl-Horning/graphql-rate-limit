@@ -3,7 +3,6 @@ const dotenv = require("dotenv");
 const chalk = require("chalk");
 const { rateLimitDirective } = require("graphql-rate-limit-directive");
 const { ApolloServer } = require("apollo-server");
-const { RateLimiterMemory } = require("rate-limiter-flexible");
 const { makeExecutableSchema } = require("@graphql-tools/schema");
 
 // Destructuring to get specific chalk colors

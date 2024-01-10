@@ -1,0 +1,46 @@
+{
+  "name": "graphql-rate-limit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karl-Horning/graphql-rate-limit.git"
+  },
+  "keywords": [
+    "apollo-server",
+    "graphql",
+    "graphql-js",
+    "directive",
+    "middleware",
+    "schema",
+    "resolvers",
+    "rate",
+    "limit",
+    "ratelimit",
+    "rate-limit",
+    "graphql-rate-limit",
+    "cost",
+    "security"
+  ],
+  "author": "Karl Horning",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Karl-Horning/graphql-rate-limit/issues"
+  },
+  "homepage": "https://github.com/Karl-Horning/graphql-rate-limit#readme",
+  "dependencies": {
+    "@graphql-tools/utils": "^10.0.12",
+    "apollo-server": "^3.13.0",
+    "graphql": "^16.8.1",
+    "graphql-rate-limit-directive": "^2.0.5",
+    "rate-limiter-flexible": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

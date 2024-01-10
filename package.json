@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/Karl-Horning/graphql-rate-limit#readme",
   "dependencies": {
+    "@graphql-tools/schema": "^10.0.2",
     "@graphql-tools/utils": "^10.0.12",
     "apollo-server": "^3.13.0",
     "graphql": "^16.8.1",

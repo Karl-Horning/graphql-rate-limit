@@ -1,26 +1,30 @@
 # GraphQL Rate Limit
 
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Example Usage](#example-usage)
-- [FAQ and Troubleshooting](#faq-and-troubleshooting)
-- [Contributing](#contributing)
-- [Acknowledgments](#acknowledgments)
-- [License](#license)
-- [Author](#author)
+- [GraphQL Rate Limit](#graphql-rate-limit)
+  - [Description](#description)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Example Usage](#example-usage)
+  - [FAQ and Troubleshooting](#faq-and-troubleshooting)
+    - [Q: Why am I seeing a "PORT variable not provided" error during startup?](#q-why-am-i-seeing-a-port-variable-not-provided-error-during-startup)
+    - [Q: How can I customize the rate limit for specific GraphQL fields?](#q-how-can-i-customize-the-rate-limit-for-specific-graphql-fields)
+    - [Q: I'm encountering issues with rate limiting in my GraphQL queries. What should I check?](#q-im-encountering-issues-with-rate-limiting-in-my-graphql-queries-what-should-i-check)
+    - [Q: Is there a way to disable rate limiting for certain GraphQL queries?](#q-is-there-a-way-to-disable-rate-limiting-for-certain-graphql-queries)
+  - [Contributing](#contributing)
+  - [Acknowledgments](#acknowledgments)
+  - [Author](#author)
+  - [License](#license)
 
-## Overview
+## Description
 
-GraphQL Rate Limit Directive is a middleware for Apollo Server that enables rate limiting on GraphQL queries, providing control over request frequencies to enhance security and performance.
+This sandbox is designed for testing the GraphQL Rate Limit Directive, a middleware solution for Apollo Server. The directive enables rate limiting for GraphQL queries, offering control over request frequencies to improve both security and system performance.
 
 ## Features
 
 - **Flexible Rate Limiting**: Set limits on specific GraphQL fields based on unique user data.
 - **Customizable Key Generation**: Determine uniqueness/isolation of operations using a custom key generator.
-- **Easy Integration**: Seamlessly integrates with Apollo Server and GraphQL schemas.
+- **Easy Integration**: Integrates with Apollo Server and GraphQL schemas.
 - **CSRF Prevention**: Enhance security with Cross-Site Request Forgery prevention.
 
 ## Installation
@@ -38,7 +42,7 @@ npm install graphql-rate-limit-directive
 3. Define your GraphQL schema, applying rate limiting to specific fields.
 4. Start your Apollo Server instance with the configured schema.
 
-### Example Usage:
+### Example Usage
 
 ```javascript
 // Import necessary modules and packages
@@ -71,9 +75,7 @@ schema = rateLimitDirectiveTransformer(schema);
 startApolloServer(port);
 ```
 
-For more detailed information, refer to the GraphQL Rate Limit Directive [Documentation](https://www.npmjs.com/package/graphql-rate-limit-directive).
-
-Certainly! Here's an example of how you might structure a FAQ or Troubleshooting section for your GraphQL Rate Limit project:
+For more detailed information, [refer to the GraphQL Rate Limit Directive Documentation](https://www.npmjs.com/package/graphql-rate-limit-directive).
 
 ## FAQ and Troubleshooting
 
@@ -84,8 +86,6 @@ A: This error occurs when the `PORT` environment variable is not set in your `.e
 ### Q: How can I customize the rate limit for specific GraphQL fields?
 
 A: You can customize the rate limit by applying the `@rateLimit` directive to specific fields in your GraphQL schema. Check "Step 3: Attach directive to field or object" in the [Documentation](https://www.npmjs.com/package/graphql-rate-limit-directive) for an example of how to apply rate limiting to specific fields.
-
- 
 
 ### Q: I'm encountering issues with rate limiting in my GraphQL queries. What should I check?
 
@@ -101,18 +101,21 @@ Contributions to this example are welcome! Feel free to submit issues or pull re
 
 ## Acknowledgments
 
+This project uses the following resources:
+
 - [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
 - [GraphQL Tools](https://www.graphql-tools.com/)
 - [Rate Limiter Flexible](https://github.com/animir/node-rate-limiter-flexible)
 - [GraphQL Rate Limit Directive](https://github.com/ravangen/graphql-rate-limit) - Used for rate limiting in this project, and this implementation is based on the [context demo](https://github.com/ravangen/graphql-rate-limit/tree/e8c8d534b0cb1dafc967b818bcc3fc53d8db4b27/examples/context) by ravangen.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Author
 
-**Karl Horning:**
+Karl Horning
+
 - [GitHub](https://github.com/Karl-Horning/)
 - [LinkedIn](https://www.linkedin.com/in/karl-horning/)
 - [CodePen](https://codepen.io/karlhorning)
+
+## License
+
+This repository is licensed under the [MIT License](LICENSE).

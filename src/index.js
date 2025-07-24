@@ -9,6 +9,7 @@ dotenv.config();
 
 /**
  * Ensure that the PORT variable is provided in the .env file
+ *
  * @throws {Error} If PORT variable is not provided
  */
 if (!process.env.PORT) {
@@ -18,6 +19,7 @@ if (!process.env.PORT) {
 
 /**
  * The port number for Apollo Server.
+ *
  * @type {number}
  */
 const port = parseInt(process.env.PORT, 10) || 4000;

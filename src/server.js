@@ -6,7 +6,9 @@ import context from "./utils/context.js";
 const { red, green, yellow } = chalk;
 
 /**
- * The Apollo Server instance for serving GraphQL requests.
+ * Apollo Server instance for handling GraphQL queries.
+ * Configured with schema, context, CSRF prevention, and caching.
+ *
  * @type {ApolloServer}
  */
 const server = new ApolloServer({
@@ -18,7 +20,8 @@ const server = new ApolloServer({
 });
 
 /**
- * Handle SIGINT for graceful shutdown.
+ * Handles graceful shutdown when SIGINT (Ctrl+C) is received.
+ *
  * @event
  */
 process.on("SIGINT", async () => {
@@ -34,9 +37,9 @@ process.on("SIGINT", async () => {
 });
 
 /**
- * Starts the Apollo Server and listens on the specified port.
- * @function
- * @param {number} port - The port number to listen on.
+ * Starts the Apollo Server on the specified port.
+ *
+ * @param {number} port - The port number on which the server should listen.
  */
 const startApolloServer = (port) => {
     server

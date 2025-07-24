@@ -5,6 +5,11 @@ import {
 } from "../directives/rateLimit.js";
 import resolvers from "./resolvers.js";
 
+/**
+ * Array of GraphQL type definitions including the @rateLimit directive and schema.
+ *
+ * @type {Array<string | import('graphql').DocumentNode>}
+ */
 const typeDefs = [
     rateLimitDirectiveTypeDefs,
     `# Allow each field to be queried once every 15 seconds

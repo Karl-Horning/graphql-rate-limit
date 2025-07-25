@@ -90,9 +90,10 @@ echo "PORT=4000" > .env
 
 ## 🚀 Scripts
 
-| Command     | Description                              |
-| ----------- | ---------------------------------------- |
-| `npm start` | Start the GraphQL server on defined port |
+| Command        | Description                                |
+| -------------- | ------------------------------------------ |
+| `npm start`    | Start the GraphQL server on defined port   |
+| `npm run test` | Run automated Jest tests for rate limiting |
 
 ---
 
@@ -100,6 +101,8 @@ echo "PORT=4000" > .env
 
 ```bash
 src/
+├── __tests__/
+│   └── rateLimit.test.js  # Jest tests for rate limiting behaviour
 ├── directives/
 │   └── rateLimit.js       # Directive setup and key generator
 ├── schema/
@@ -126,7 +129,27 @@ This project uses:
 
 ## 🔍 Tests
 
-Tests will be added soon to demonstrate rate limiting with repeated queries using tools like `Postman` or manual `curl` tests.
+Automated tests are written using **Jest** and cover basic rate limiting behaviour.
+
+The tests simulate multiple GraphQL queries and check that:
+
+- The first request is **allowed**.
+- The second request is **rate limited** and returns the expected error message.
+
+To run the tests:
+
+```bash
+npm run test
+```
+
+Example output:
+
+```bash
+PASS  src/__tests__/rateLimit.test.js
+  Rate limiting
+    ✓ should allow the first request (xx ms)
+    ✓ should rate limit the second request (xx ms)
+```
 
 ---
 
@@ -140,7 +163,7 @@ Tests will be added soon to demonstrate rate limiting with repeated queries usin
 
 - [x] Modularise monolithic GraphQL setup
 - [x] Switch to ES modules
-- [ ] Add example rate limit tests (for example, with `curl`, Postman, or automated)
+- [x] Add example rate limit tests (for example, with `curl`, Postman, or automated)
 - [ ] Add optional Redis integration for distributed rate limiting
 - [ ] Add logging middleware for introspection
 

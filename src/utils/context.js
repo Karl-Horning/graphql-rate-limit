@@ -10,9 +10,9 @@
  * @param {string} params.req.connection.remoteAddress - The IP address of the client.
  * @returns {{ ipAddress: string, authorization: string|null }} Context to be passed into resolvers.
  */
-const context = ({ req }) => {
-    const ipAddress = req.connection.remoteAddress;
-    const authorization = req.headers.authorization || null;
+const context = ({ req } = {}) => {
+    const ipAddress = req?.connection?.remoteAddress || "127.0.0.1"; // fallback IP for tests
+    const authorization = req?.headers?.authorization || null;
     return { ipAddress, authorization };
 };
 

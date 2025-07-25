@@ -1,6 +1,16 @@
 import server from "../server.js";
 
+/**
+ * Test suite for GraphQL rate limiting functionality.
+ *
+ * It verifies that the server allows the first request
+ * and applies rate limiting on subsequent requests.
+ */
 describe("Rate limiting", () => {
+    /**
+     * Test that the first GraphQL query request is allowed
+     * and returns the expected quote without errors.
+     */
     it("should allow the first request", async () => {
         const res = await server.executeOperation({
             query: `query { quote }`,
@@ -12,13 +22,17 @@ describe("Rate limiting", () => {
         );
     });
 
+    /**
+     * Test that a second immediate request is blocked due to rate limiting.
+     * It sends two queries and expects the second to return a rate limit error message.
+     */
     it("should rate limit the second request", async () => {
-        // First request to set the limit
+        // First request to establish rate limiting state
         await server.executeOperation({
             query: `query { quote }`,
         });
 
-        // Second request should be rate-limited
+        // Second request should be rejected by rate limiter
         const res = await server.executeOperation({
             query: `query { quote }`,
         });

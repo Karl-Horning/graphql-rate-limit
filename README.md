@@ -5,7 +5,6 @@
 - [🚦 GraphQL Rate Limit Demo](#-graphql-rate-limit-demo)
   - [📖 Table of Contents](#-table-of-contents)
   - [🤓 Overview](#-overview)
-  - [✅ Purpose](#-purpose)
   - [📸 Demo](#-demo)
   - [🛠️ Tech Stack](#️-tech-stack)
   - [📦 Installation](#-installation)
@@ -32,12 +31,6 @@ This GraphQL server applies per-field rate limits using IP address and auth head
 - Prototyping request throttling in a Node.js backend.
 - Demonstrating use of Apollo Server with custom directives.
 - Serving as a base template for future GraphQL projects.
-
----
-
-## ✅ Purpose
-
-This project was created to test and demonstrate rate limiting for GraphQL APIs before implementation in a production environment. It also serves as a reference for others interested in adding basic request control to their APIs.
 
 ---
 
